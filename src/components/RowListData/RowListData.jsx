@@ -48,7 +48,7 @@ const RowListData = ({
 
   const deleteSelecetdHandler = () => {
     if (deleteMultiple.length) {
-      setModalMsg(`Are you sure you want to delete Selected row data ?`);
+      setModalMsg(`Are you sure you want to delete Selected rows data ?`);
       setShowModal(true);
     }
   };
@@ -208,7 +208,13 @@ const RowListData = ({
         })}
         <tr>
           <td className="delete_selected__cont">
-            <button onClick={deleteSelecetdHandler}>Delete Selected</button>
+            <button
+              onClick={deleteSelecetdHandler}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <span style={{ marginRight: "0.5rem" }}>Delete Selected</span>{" "}
+              <MdDelete size={20} />
+            </button>
           </td>
         </tr>
         {showModal && (
